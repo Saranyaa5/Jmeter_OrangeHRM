@@ -8582,7 +8582,7 @@ Match[1][1]=0791a8b8a1.aSg3wmMxA3lVi4X5c2pJjYi408ebiRHXAKNrBvgOLyM.BUZ9gSJGSyY2z
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/web/index.php/core/i18n/messages-153" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/web/index.php/core/i18n/messages-153">
             <stringProp name="HTTPSampler.domain">opensource-demo.orangehrmlive.com</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>

@@ -29,7 +29,7 @@
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -86,58 +86,9 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1631696980">https://opensource-demo.orangehrmlive.com/web/index.php/auth/</stringProp>
-                <stringProp name="0"></stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.request_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">2</intProp>
-            </ResponseAssertion>
-            <hashTree/>
           </hashTree>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time">
-          <intProp name="ActionProcessor.action">1</intProp>
-          <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">0</stringProp>
-        </TestAction>
-        <hashTree>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
-            <stringProp name="RandomTimer.range">100</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>
-        </hashTree>
       </hashTree>
-      <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Pacing">
-        <stringProp name="scriptLanguage">groovy</stringProp>
-        <stringProp name="parameters"></stringProp>
-        <stringProp name="filename"></stringProp>
-        <stringProp name="cacheKey">true</stringProp>
-        <stringProp name="script">int currentIteration = vars.get(&quot;pacingCounter&quot;)?.toInteger() ?: 1
-int totalIterations = 2  // Match your Loop Controller&apos;s loop count
-
-if (currentIteration &lt; totalIterations) {
-    long pacingTime = 30000
-    long startTime = vars.get(&quot;iterationStart&quot;)?.toLong() ?: System.currentTimeMillis()
-    long now = System.currentTimeMillis()
-    long elapsed = now - startTime
-    long waitTime = pacingTime - elapsed
-
-    if (waitTime &gt; 0) {
-        log.info(&quot;Pacing active - waiting &quot; + waitTime + &quot; ms&quot;)
-        Thread.sleep(waitTime)
-    } else {
-        log.info(&quot;Pacing not needed - already exceeded pacing time&quot;)
-    }
-} else {
-    log.info(&quot;Last iteration - skipping wait&quot;)
-}</stringProp>
-      </JSR223Sampler>
-      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
